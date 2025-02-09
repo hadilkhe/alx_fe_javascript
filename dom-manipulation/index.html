@@ -8,36 +8,38 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin: 50px;
+            margin: 20px;
         }
         #quoteDisplay {
-            font-size: 1.5em;
+            font-size: 20px;
             margin: 20px;
-            padding: 10px;
+            padding: 20px;
             border: 1px solid #ddd;
+            background-color: #f9f9f9;
             display: inline-block;
+            width: 60%;
         }
         input, button {
-            margin: 5px;
+            margin: 10px;
             padding: 10px;
         }
     </style>
 </head>
 <body>
+
     <h1>Dynamic Quote Generator</h1>
+    <div id="quoteDisplay">Click "Generate Quote" to see a random quote.</div>
+    <br>
+    <button onclick="displayRandomQuote()">Generate Quote</button>
 
-    <!-- Section to display the random quote -->
-    <div id="quoteDisplay">Click the button to see a quote!</div><br>
+    <h2>Add a New Quote</h2>
+    <input type="text" id="newQuoteText" placeholder="Enter your quote" />
+    <input type="text" id="newQuoteCategory" placeholder="Enter category" />
+    <button onclick="addQuote()">Add Quote</button>
 
-    <!-- Button to show a new quote -->
-    <button id="newQuote">Show New Quote</button>
-
-    <!-- Form to add a new quote -->
-    <div>
-        <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
-        <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
-        <button id="addQuote">Add Quote</button>
-    </div>
+    <h2>Manage Quotes</h2>
+    <button onclick="exportToJsonFile()">Export Quotes</button>
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
 
     <script src="script.js"></script>
 </body>
