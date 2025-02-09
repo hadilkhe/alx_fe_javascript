@@ -19,7 +19,7 @@
             display: inline-block;
             width: 60%;
         }
-        input, button {
+        select, input, button {
             margin: 10px;
             padding: 10px;
         }
@@ -28,6 +28,13 @@
 <body>
 
     <h1>Dynamic Quote Generator</h1>
+    
+    <label for="categoryFilter">Filter by Category:</label>
+    <select id="categoryFilter" onchange="filterQuotes()">
+        <option value="all">All Categories</option>
+        <!-- Categories will be dynamically added here -->
+    </select>
+
     <div id="quoteDisplay">Click "Generate Quote" to see a random quote.</div>
     <br>
     <button onclick="displayRandomQuote()">Generate Quote</button>
